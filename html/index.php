@@ -29,7 +29,7 @@ if ($returnCode === 0 && strpos($output[0], "RUNNING") !== false) {
     $restartbutton = "disabled";
 }
 
-if(isset($_POST['command'])) { 
+if(isset($_POST['command'])) {
     $comando = $_POST['command'];
     switch ($comando) {
         case 'start':
@@ -56,10 +56,10 @@ if(isset($_POST['command'])) {
     </head>
     <body>
         <?php echo file_get_contents('images/icons.svg');?>
-        
+
         <!-- <div id="wrapper">
-            <div id="triangle"><svg><use href="#triangle"/></svg></div> 
-            <div id="circle"><svg><use href="#circle"/></svg></div> 
+            <div id="triangle"><svg><use href="#triangle"/></svg></div>
+            <div id="circle"><svg><use href="#circle"/></svg></div>
             <div id="cross"><svg><use href="#cross"/></svg></div>
             <div id="square"><svg><use href="#square"/></svg></div>
         </div> -->
@@ -72,7 +72,7 @@ if(isset($_POST['command'])) {
 
         <div id="content" class="container mt-3" style="display:none">
             <div class="d-flex justify-content-center mb-3">
-                <svg><use href="#logo"/></svg>  
+                <svg><use href="#logo"/></svg>
             </div>
             <div class="d-flex justify-content-center">
                 <button <?php echo $startbutton;?> id="start" class="button btn btn-success me-2 d-flex justify-content-center align-items-center">
@@ -93,13 +93,13 @@ if(isset($_POST['command'])) {
                     </div>
                     <span class="spinner" style="display:none"></span>
                 </button>
-            </div> 
+            </div>
 
             <div id="terminal">
                 <div class="terminal-window rounded-3 mt-4 position-relative">
                     <div class="terminal-bar d-flex">
                         <div class="me-auto">
-                            <img src="images/logo.svg" alt="Icono de la ventana" class="icon-terminal d-inline ms-1">
+                            <img src="images/icons.svg" alt="icon" class="icon-terminal d-inline ms-1">
                             <div class="d-inline">Docker PPPwn</div>
                         </div>
                         <div class="text-left ms-auto me-1">
