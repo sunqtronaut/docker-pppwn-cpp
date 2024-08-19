@@ -3,6 +3,7 @@
 *.bin
 *.log
 *.tmp
+*.pid
 
 src
 

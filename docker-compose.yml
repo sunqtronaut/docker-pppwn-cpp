@@ -15,4 +15,8 @@ services:
       - ./nginx/default.conf:/etc/nginx/http.d/default.conf
       - ./supervisord.conf:/etc/supervisord.conf
       - ./html:/var/www/html
-    restart: unless-stopped
+    restart: on-failure
+    deploy:
+      resources:
+        limits:
+          memory: 96M
