@@ -21,9 +21,6 @@ echo -e "\033[38;5;27m  ___          _             ___ ___ ___
  | |) / _ \/ _| / / -_| '_| |  _|  _|  _\ V  V | ' \
  |___/\___/\__|_\_\___|_|   |_| |_| |_|  \_/\_/|_||_|";
 
-# ip link set $INTERFACE down
-# sleep 5
-# ip link set $INTERFACE up
 echo -e "\n\033[32mReady for console connection
 \033[0mFirmware:\033[38;5;27m $FIRMWAREVERSION
 \033[0mInterface:\033[38;5;27m $INTERFACE\033[0m\n"
@@ -41,14 +38,6 @@ if [ $ret -ge 1 ]
     echo -e "\033[32m\nConsole PPPwned! \033[0m\n"
     ip link set $INTERFACE down
     ip link set $INTERFACE up
-    if [ $SHUTDOWN = true ] ; then
-      poweroff
-    else
-      if [ $PPPOECONN = true ] ; then
-        echo -e "\033[92mInternet Access:\033[93m Enabled\033[0m"
-        $DIR/pppoe.sh
-      fi
-    fi
     exit 0
 fi
 done

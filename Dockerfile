@@ -14,10 +14,10 @@ RUN sed -i 's/;listen.owner = www-data/listen.owner = nginx/' /usr/local/etc/php
     sed -i 's/listen = 9000/listen = \/var\/run\/php-fpm.sock/' /usr/local/etc/php-fpm.d/zz-docker.conf && \
     sed -i 's/listen = 127.0.0.1:9000/listen = \/var\/run\/php-fpm.sock/' /usr/local/etc/php-fpm.d/www.conf
 
-# ADD pppwn /pppwn
-# COPY nginx/default.conf /etc/nginx/http.d/default.conf
-# COPY html /var/www/html
-# COPY supervisord.conf /etc/supervisord.conf
+COPY pppwn /pppwn
+COPY nginx/default.conf /etc/nginx/http.d/default.conf
+COPY html /var/www/html
+COPY supervisord.conf /etc/supervisord.conf
 
 EXPOSE 8066
 
